@@ -1,0 +1,66 @@
+// app.component.ts
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+
+@Component({
+  selector: 'my-app',
+  templateUrl: './app.component.html',
+  styleUrls: [ './app.component.css' ]
+})
+export class AppComponent  {
+  todoForm: FormGroup;
+  todos: FormArray;
+
+  constructor(private fb: FormBuilder) {
+    // fb array takes fb controlls
+    this.todos = fb.array([
+      // fb.control('')
+    ]);
+    // fb group takes an object of fb arrays
+    // holds the array of control/input values
+    this.todoForm = fb.group({
+      // fb array
+      todos: this.todos
+    })
+  }
+
+  addNewTodo() {
+    //add new Control(input) to FormArray
+    this.todos.push(this.fb.control(''));
+  }
+
+  removeTodo(index: number) {
+    this.todos.removeAt(index);
+  }
+
+  submitTodos() {
+    console.log(this.todoForm.value);
+  }
+}
+
+
+// html
+<form [formGroup]="todoForm" (ngSubmit)="submitTodos()">
+  <button>Submit Form</button>
+
+  <button
+    type="button" (click)="addNewTodo()">
+    Add New Todo
+  </button>
+
+  <div *ngFor="let todoControl of todos.controls; index as i">
+    <!-- each new control create from TS has a name of
+    todoControl -->
+
+    <!-- names the control on the fly -->
+    <input
+
+      [formControl]="todoControl"
+      placeholder="Todo Item">
+
+    <button type="button" (click)="removeTodo(i)">
+      X
+    </button>
+  </div>
+</form>
+

@@ -1,0 +1,26 @@
+<div class="recent-container">
+  <form [formGroup]="todoForm" (ngSubmit)="submitTodos()" class="recent-form">
+
+
+    <button
+      type="button" (click)="addNewTodo()">
+      Add New Todo
+    </button>
+
+    <button class="task-save">Save</button>
+
+    <div *ngFor="let todoControl of todos.controls; index as i">
+      <!-- each new control create from TS has a name of
+      todoControl -->
+
+      <!-- names the control on the fly -->
+      <input
+        [formControl]="todoControl"
+        placeholder="Todo Item">
+
+      <button type="button" (click)="removeTodo(i)">
+        X
+      </button>
+    </div>
+  </form>
+</div>

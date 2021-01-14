@@ -1,0 +1,84 @@
+
+
+<hr>
+<!-- generate instance per data entry -->
+<mat-grid-list cols="1" rowHeight="200px">
+  <mat-grid-tile>
+    <i class="material-icons">addchart</i>
+    <mat-form-field class="example-full-width" style="padding-left:20px">
+      <!--          <mat-label>Favorite food</mat-label>-->
+      <input matInput
+             placeholder="Todo Item recent">
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <!--  2 -->
+  <mat-grid-tile >
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <i class="material-icons">touch_app</i>
+          <!--          <mat-icon svgIcon="3d_rotation" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>-->
+        </div>
+        <mat-card-title>Task</mat-card-title>
+        <!--     todo:   add date component -->
+        <mat-card-subtitle>plug in electrify</mat-card-subtitle>
+      </mat-card-header>
+
+      <!--      notes -->
+      <mat-card-content>
+
+            <mat-form-field>
+              <mat-label></mat-label>
+              <input matInput >
+            </mat-form-field>
+
+            <button mat-raised-button (click)="openDialog()">add note</button>
+
+
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button>click</button>
+        <button mat-raised-button color="primary">click</button>
+        <button mat-raised-button color="accent">click</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- 3 -->
+<!--  <mat-grid-tile>-->
+<!--    <mat-card class="example-card">-->
+<!--      <mat-card-header>-->
+<!--        <div mat-card-avatar class="material-icons">-->
+<!--          touch_app-->
+<!--          &lt;!&ndash;          <i class="material-icons">3d_rotation</i>&ndash;&gt;-->
+<!--        </div>-->
+<!--        <mat-card-title>Task</mat-card-title>-->
+<!--        <mat-card-subtitle>record audio with effects / dub</mat-card-subtitle>-->
+<!--      </mat-card-header>-->
+
+<!--      <mat-card-content>-->
+<!--        <mat-form-field>-->
+<!--          <mat-label>{{notes}}</mat-label>-->
+<!--          <input matInput [(ngModel)]="notes">-->
+<!--        </mat-form-field>-->
+
+<!--        <button mat-raised-button (click)="openDialog()">add note</button>-->
+<!--      </mat-card-content>-->
+<!--      <mat-card-actions>-->
+<!--        <button mat-raised-button>click</button>-->
+<!--        <button mat-raised-button color="primary">click</button>-->
+<!--        <button mat-raised-button color="accent">click</button>-->
+<!--      </mat-card-actions>-->
+<!--    </mat-card>-->
+<!--  </mat-grid-tile>-->
+
+
+
+  <!--  <mat-grid-tile>4</mat-grid-tile>-->
+</mat-grid-list>
+
+
+
+
