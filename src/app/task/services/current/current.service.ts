@@ -11,13 +11,20 @@ export class CurrentService {
   constructor(private http: HttpClient) { }
 
   getTodos() {
-    // return this.http.get('../../../../assets/todos.json')
-    return from(fetch('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
-      return json;
+    return from(fetch('https://mockend.com/org/repo/posts')
+    .then(res => res.json())
+    .then(json => {
+      console.log(json, ' mocked');
+      return 'json';
     }))
+
+    // return this.http.get('../../../../assets/todos.json')
+    // return from(fetch('https://jsonplaceholder.typicode.com/posts')
+    // .then((response) => response.json())
+    // .then((json) => {
+    //   console.log(json);
+    //   return json;
+    // }))
   }
 
   addTodo() {
